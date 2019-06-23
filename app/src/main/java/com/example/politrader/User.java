@@ -1,6 +1,7 @@
 package com.example.politrader;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class User implements Serializable {
@@ -26,7 +27,9 @@ public class User implements Serializable {
     }
 
     double getCurrentBalance() {
-        return currentBalance;
+        DecimalFormat df = new DecimalFormat("##.00");
+
+        return Double.parseDouble(df.format(currentBalance));
 
     }
 
